@@ -16,8 +16,8 @@ class _MyAppState extends State<MyApp> {
       "question": "What is your favorite color?",
       "answer": [
         {"text": "Black", "score": 10},
-        {"text": "Blue", "score": 8},
-        {"text": "White", "score": 6},
+        {"text": "Blue", "score": 5},
+        {"text": "White", "score": 3},
         {"text": "Brown", "score": 7}
       ]
     },
@@ -26,7 +26,9 @@ class _MyAppState extends State<MyApp> {
       "answer": [
         {"text": "Dog", "score": 10},
         {"text": "Rabbit", "score": 4},
-        {"text": "Horse", "score": 5}
+        {"text": "Horse", "score": 5},
+        {"text": "Bat", "score": 0},
+        {"text": "Cat", "score": 3}
       ]
     },
     {
@@ -55,16 +57,19 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('Personality Detection'),
-          ),
-          body: _count < _questions.length
-              ? Quiz(
-                  changeQuestion: _changeQuestion,
-                  questions: _questions,
-                  count: _count)
-              : Result(_totalscore,_reset)),
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(
+        child: Scaffold(
+            appBar: AppBar(
+              title: Text('Personality Detection'),
+            ),
+            body: _count < _questions.length
+                ? Quiz(
+                    changeQuestion: _changeQuestion,
+                    questions: _questions,
+                    count: _count)
+                : Result(_totalscore,_reset)),
+      ),
     );
   }
 }
