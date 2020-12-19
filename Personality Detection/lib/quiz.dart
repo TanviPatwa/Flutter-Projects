@@ -15,6 +15,7 @@ class Quiz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
+      SizedBox(height: 100,),
       Question(questions[count]['question']),
       ...(questions[count]['answer'] as List<Map<String,Object>>).map((ans) {
         // creating object ie returning answer widget according to option present
