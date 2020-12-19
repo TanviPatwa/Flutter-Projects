@@ -21,12 +21,13 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(children: [
+        SizedBox(height: 200,),
         Text(
           resultp,
-          style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
         FlatButton(
-          child: Text("Restart Quiz"),
+          child: Text("Restart Quiz",style: TextStyle(fontSize: 15),),
           onPressed: resetpg,
         )
       ]),
